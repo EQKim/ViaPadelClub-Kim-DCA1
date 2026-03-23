@@ -1,0 +1,16 @@
+﻿<wpf:ResourceDictionary xml:space="preserve" xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml" xmlns:s="clr-namespace:System;assembly=mscorlib" xmlns:ss="urn:shemas-jetbrains-com:settings-storage-xaml" xmlns:wpf="http://schemas.microsoft.com/winfx/2006/xaml/presentation">
+	<s:String x:Key="/Default/Environment/UnitTesting/UnitTestSessionStore/Sessions/=2a083773_002D6477_002D44b7_002Da406_002D514e607f82ca/@EntryIndexedValue">&lt;SessionState ContinuousTestingMode="0" IsActive="True" Name="All tests from Values" xmlns="urn:schemas-jetbrains-com:jetbrains-ut-session"&gt;&#xD;
+  &lt;Or&gt;&#xD;
+    &lt;ProjectFolder&gt;8E31543A-A746-44C4-87D3-7D135A9CD282/d:Domain/d:Common/d:Values&lt;/ProjectFolder&gt;&#xD;
+    &lt;TestAncestor&gt;&#xD;
+      &lt;TestId&gt;xUnit::8E31543A-A746-44C4-87D3-7D135A9CD282::net9.0::UnitTests.Features.Players.RegisterPlayer.RegisterPlayerTests&lt;/TestId&gt;&#xD;
+    &lt;/TestAncestor&gt;&#xD;
+    &lt;ProjectFile&gt;8E31543A-A746-44C4-87D3-7D135A9CD282/d:Domain/d:Features/d:Players/d:GrantVip/f:GrantVipTests.cs&lt;/ProjectFile&gt;&#xD;
+    &lt;ProjectFile&gt;8E31543A-A746-44C4-87D3-7D135A9CD282/d:Domain/d:Features/d:Players/d:RevokeVip/f:RevokeVipTests.cs&lt;/ProjectFile&gt;&#xD;
+    &lt;ProjectFile&gt;8E31543A-A746-44C4-87D3-7D135A9CD282/d:Domain/d:Features/d:Players/d:BanPlayer/f:BanPlayerTests.cs&lt;/ProjectFile&gt;&#xD;
+    &lt;ProjectFile&gt;8E31543A-A746-44C4-87D3-7D135A9CD282/d:Domain/d:Features/d:DailySchedules/d:CreateDailySchedule/f:CreateDailyScheduleTests.cs&lt;/ProjectFile&gt;&#xD;
+    &lt;ProjectFolder&gt;8E31543A-A746-44C4-87D3-7D135A9CD282/d:Domain/d:Features/d:DailySchedules/d:ActivateDailySchedule&lt;/ProjectFolder&gt;&#xD;
+    &lt;ProjectFolder&gt;8E31543A-A746-44C4-87D3-7D135A9CD282/d:Domain/d:Features/d:DailySchedules/d:CreateBooking&lt;/ProjectFolder&gt;&#xD;
+    &lt;ProjectFile&gt;8E31543A-A746-44C4-87D3-7D135A9CD282/d:Domain/d:Features/d:DailySchedules/d:CancelBooking/f:CancelBookingTests.cs&lt;/ProjectFile&gt;&#xD;
+  &lt;/Or&gt;&#xD;
+&lt;/SessionState&gt;</s:String></wpf:ResourceDictionary>

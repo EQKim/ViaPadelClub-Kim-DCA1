@@ -1,8 +1,56 @@
 ﻿
 Microsoft Visual Studio Solution File, Format Version 12.00
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Documentation", "Documentation", "{29491485-950B-44F5-BDB7-06632DD516D3}"
+	ProjectSection(SolutionItems) = preProject
+		Documentation\GroupMembers.md = Documentation\GroupMembers.md
+		Documentation\Abstract-Domain.png = Documentation\Abstract-Domain.png
+		Documentation\Concrete-Domain.png = Documentation\Concrete-Domain.png
+	EndProjectSection
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "src", "src", "{2CE1A58F-8DC0-4357-B125-532C5B4FC74E}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Core", "Core", "{0D7C65EC-9FD3-4F90-91C2-FA76E2EE8F70}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Tools", "Tools", "{DE48BC7A-F25D-48CD-BF14-0426727A3449}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ViaPadelClub-Kim-DCA1.Core.Tools.OperationResult", "ViaPadelClub-Kim-DCA1.Core.Tools.OperationResult\ViaPadelClub-Kim-DCA1.Core.Tools.OperationResult.csproj", "{83ABCFCB-1579-4E1C-A9C0-EB20BED7B74B}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Assignment4", "Assignment4", "{B614FE8C-BB05-4358-86DF-013ED0F5C7D1}"
+	ProjectSection(SolutionItems) = preProject
+		Documentation\Assignment4.md = Documentation\Assignment4.md
+	EndProjectSection
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ViaPadelClub-Kim-DCA1.Core.Domain", "ViaPadelClub-Kim-DCA1.Core.Domain\ViaPadelClub-Kim-DCA1.Core.Domain.csproj", "{0C287664-674D-4C34-8F3F-F0BCBA6CDEBD}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Tests", "Tests", "{9531E852-0C5B-4008-85B5-9FD9C2B392B2}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "UnitTests", "UnitTests\UnitTests.csproj", "{8E31543A-A746-44C4-87D3-7D135A9CD282}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
 		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(NestedProjects) = preSolution
+		{0D7C65EC-9FD3-4F90-91C2-FA76E2EE8F70} = {2CE1A58F-8DC0-4357-B125-532C5B4FC74E}
+		{DE48BC7A-F25D-48CD-BF14-0426727A3449} = {0D7C65EC-9FD3-4F90-91C2-FA76E2EE8F70}
+		{83ABCFCB-1579-4E1C-A9C0-EB20BED7B74B} = {DE48BC7A-F25D-48CD-BF14-0426727A3449}
+		{B614FE8C-BB05-4358-86DF-013ED0F5C7D1} = {29491485-950B-44F5-BDB7-06632DD516D3}
+		{0C287664-674D-4C34-8F3F-F0BCBA6CDEBD} = {0D7C65EC-9FD3-4F90-91C2-FA76E2EE8F70}
+		{8E31543A-A746-44C4-87D3-7D135A9CD282} = {9531E852-0C5B-4008-85B5-9FD9C2B392B2}
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{83ABCFCB-1579-4E1C-A9C0-EB20BED7B74B}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{83ABCFCB-1579-4E1C-A9C0-EB20BED7B74B}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{83ABCFCB-1579-4E1C-A9C0-EB20BED7B74B}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{83ABCFCB-1579-4E1C-A9C0-EB20BED7B74B}.Release|Any CPU.Build.0 = Release|Any CPU
+		{0C287664-674D-4C34-8F3F-F0BCBA6CDEBD}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{0C287664-674D-4C34-8F3F-F0BCBA6CDEBD}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{0C287664-674D-4C34-8F3F-F0BCBA6CDEBD}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{0C287664-674D-4C34-8F3F-F0BCBA6CDEBD}.Release|Any CPU.Build.0 = Release|Any CPU
+		{8E31543A-A746-44C4-87D3-7D135A9CD282}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{8E31543A-A746-44C4-87D3-7D135A9CD282}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{8E31543A-A746-44C4-87D3-7D135A9CD282}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{8E31543A-A746-44C4-87D3-7D135A9CD282}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 EndGlobal
