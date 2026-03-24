@@ -8,15 +8,15 @@
     </PropertyGroup>
 
     <ItemGroup>
+      <ProjectReference Include="..\ViaPadelClub-Kim-DCA1.Core.Tools.OperationResult\ViaPadelClub-Kim-DCA1.Core.Tools.OperationResult.csproj" />
+    </ItemGroup>
+
+    <ItemGroup>
+      <ProjectReference Include="..\ViaPadelClub-Kim-DCA1.Core.Tools.OperationResult\ViaPadelClub-Kim-DCA1.Core.Tools.OperationResult.csproj" />
+    </ItemGroup>
+
+    <ItemGroup>
       <Folder Include="Common\Values\" />
-    </ItemGroup>
-
-    <ItemGroup>
-      <ProjectReference Include="..\ViaPadelClub-Kim-DCA1.Core.Tools.OperationResult\ViaPadelClub-Kim-DCA1.Core.Tools.OperationResult.csproj" />
-    </ItemGroup>
-
-    <ItemGroup>
-      <ProjectReference Include="..\ViaPadelClub-Kim-DCA1.Core.Tools.OperationResult\ViaPadelClub-Kim-DCA1.Core.Tools.OperationResult.csproj" />
     </ItemGroup>
 
 </Project>
