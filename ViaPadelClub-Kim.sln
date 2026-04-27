@@ -28,6 +28,11 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "UnitTests", "UnitTests\Unit
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ViaPadelClub-Kim-DCA1.Core.Application", "ViaPadelClub-Kim-DCA1.Core.Application\ViaPadelClub-Kim-DCA1.Core.Application.csproj", "{E27BE438-00AF-4A03-8D66-F5B2784F532A}"
 EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Assignment5", "Assignment5", "{023CB98B-B7EC-4485-B955-916B122A1C44}"
+	ProjectSection(SolutionItems) = preProject
+		Documentation\Assignment5.md = Documentation\Assignment5.md
+	EndProjectSection
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -41,6 +46,7 @@ Global
 		{0C287664-674D-4C34-8F3F-F0BCBA6CDEBD} = {0D7C65EC-9FD3-4F90-91C2-FA76E2EE8F70}
 		{8E31543A-A746-44C4-87D3-7D135A9CD282} = {9531E852-0C5B-4008-85B5-9FD9C2B392B2}
 		{E27BE438-00AF-4A03-8D66-F5B2784F532A} = {0D7C65EC-9FD3-4F90-91C2-FA76E2EE8F70}
+		{023CB98B-B7EC-4485-B955-916B122A1C44} = {29491485-950B-44F5-BDB7-06632DD516D3}
 	EndGlobalSection
 	GlobalSection(ProjectConfigurationPlatforms) = postSolution
 		{83ABCFCB-1579-4E1C-A9C0-EB20BED7B74B}.Debug|Any CPU.ActiveCfg = Debug|Any CPU

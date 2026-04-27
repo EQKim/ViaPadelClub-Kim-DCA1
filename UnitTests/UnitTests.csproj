@@ -27,6 +27,7 @@
     </ItemGroup>
 
     <ItemGroup>
+      <ProjectReference Include="..\ViaPadelClub-Kim-DCA1.Core.Application\ViaPadelClub-Kim-DCA1.Core.Application.csproj" />
       <ProjectReference Include="..\ViaPadelClub-Kim-DCA1.Core.Domain\ViaPadelClub-Kim-DCA1.Core.Domain.csproj" />
     </ItemGroup>
 

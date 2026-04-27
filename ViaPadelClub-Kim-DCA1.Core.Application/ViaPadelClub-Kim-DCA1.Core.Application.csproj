@@ -7,4 +7,32 @@
         <Nullable>enable</Nullable>
     </PropertyGroup>
 
+
+
+    <ItemGroup>
+      <ProjectReference Include="..\ViaPadelClub-Kim-DCA1.Core.Domain\ViaPadelClub-Kim-DCA1.Core.Domain.csproj" />
+      <ProjectReference Include="..\ViaPadelClub-Kim-DCA1.Core.Tools.OperationResult\ViaPadelClub-Kim-DCA1.Core.Tools.OperationResult.csproj" />
+    </ItemGroup>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 </Project>
