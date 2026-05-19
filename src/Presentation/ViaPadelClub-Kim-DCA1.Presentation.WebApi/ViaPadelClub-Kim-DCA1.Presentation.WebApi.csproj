@@ -1,0 +1,23 @@
+<Project Sdk="Microsoft.NET.Sdk.Web">
+
+  <PropertyGroup>
+    <TargetFramework>net9.0</TargetFramework>
+    <Nullable>enable</Nullable>
+    <ImplicitUsings>enable</ImplicitUsings>
+    <RootNamespace>ViaPadelClub_Kim_DCA1.Presentation.WebApi</RootNamespace>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <PackageReference Include="Microsoft.AspNetCore.OpenApi" Version="9.0.16" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\..\Infrastructure\ViaPadelClub-Kim-DCA1.Infrastructure.PostgresQueries\ViaPadelClub-Kim-DCA1.Infrastructure.PostgresQueries.csproj" />
+    <ProjectReference Include="..\..\..\ViaPadelClub-Kim-DCA1.Core.Application\ViaPadelClub-Kim-DCA1.Core.Application.csproj" />
+    <ProjectReference Include="..\..\Core\ViaPadelClub-Kim-DCA1.Core.QueryContracts\ViaPadelClub-Kim-DCA1.Core.QueryContracts.csproj" />
+    <ProjectReference Include="..\..\Core\Tools\ViaPadelClub-Kim-DCA1.Core.Tools.ObjectMapper\ViaPadelClub-Kim-DCA1.Core.Tools.ObjectMapper.csproj" />
+    <ProjectReference Include="..\..\Infrastructure\ViaPadelClub-Kim-DCA1.Infrastructure.PostgresDmPersistence\ViaPadelClub-Kim-DCA1.Infrastructure.PostgresDmPersistence.csproj" />
+    <ProjectReference Include="..\..\..\ViaPadelClub-Kim-DCA1.Core.Tools.OperationResult\ViaPadelClub-Kim-DCA1.Core.Tools.OperationResult.csproj" />
+  </ItemGroup>
+
+</Project>

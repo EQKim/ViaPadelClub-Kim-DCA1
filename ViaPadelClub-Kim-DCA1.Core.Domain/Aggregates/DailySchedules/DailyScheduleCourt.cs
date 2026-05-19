@@ -11,9 +11,14 @@ public sealed class DailyScheduleCourt : Entity<DailyScheduleCourtId>
 {
     private readonly List<Booking> _bookings = new();
 
-    public CourtId CourtId { get; }
-    public bool IsVipOnly { get; }
+    public CourtId CourtId { get; private set; }
+    public bool IsVipOnly { get; private set; }
     public IReadOnlyList<Booking> Bookings => _bookings;
+
+    private DailyScheduleCourt()
+    {
+        CourtId = default!;
+    }
 
     public DailyScheduleCourt(DailyScheduleCourtId id, CourtId courtId, bool isVipOnly) : base(id)
     {

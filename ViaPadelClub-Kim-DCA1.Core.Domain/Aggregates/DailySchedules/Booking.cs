@@ -7,9 +7,16 @@ namespace ViaPadelClub_Kim_DCA1.Core.Domain.Aggregates.DailySchedules;
 
 public sealed class Booking : Entity<BookingId>
 {
-    public PlayerId PlayerId { get; }
-    public TimeRange Slot { get; }
+    public PlayerId PlayerId { get; private set; }
+    public TimeRange Slot { get; private set; }
     public string Status { get; private set; }
+
+    private Booking()
+    {
+        PlayerId = default!;
+        Slot = default!;
+        Status = default!;
+    }
 
     public Booking(BookingId id, PlayerId playerId, TimeRange slot) : base(id)
     {

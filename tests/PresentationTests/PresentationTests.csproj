@@ -1,0 +1,31 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <TargetFramework>net9.0</TargetFramework>
+    <ImplicitUsings>enable</ImplicitUsings>
+    <Nullable>enable</Nullable>
+    <IsPackable>false</IsPackable>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <PackageReference Include="coverlet.collector" Version="6.0.2" />
+    <PackageReference Include="Microsoft.AspNetCore.Mvc.Testing" Version="9.0.0" />
+    <PackageReference Include="Microsoft.Extensions.DependencyInjection.Abstractions" Version="9.0.0" />
+    <PackageReference Include="Microsoft.NET.Test.Sdk" Version="17.12.0" />
+    <PackageReference Include="xunit" Version="2.9.2" />
+    <PackageReference Include="xunit.runner.visualstudio" Version="2.8.2" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Using Include="Xunit" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\..\ViaPadelClub-Kim-DCA1.Core.Application\ViaPadelClub-Kim-DCA1.Core.Application.csproj" />
+    <ProjectReference Include="..\..\src\Presentation\ViaPadelClub-Kim-DCA1.Presentation.WebApi\ViaPadelClub-Kim-DCA1.Presentation.WebApi.csproj" />
+    <ProjectReference Include="..\..\src\Core\ViaPadelClub-Kim-DCA1.Core.QueryContracts\ViaPadelClub-Kim-DCA1.Core.QueryContracts.csproj" />
+    <ProjectReference Include="..\..\src\Core\Tools\ViaPadelClub-Kim-DCA1.Core.Tools.ObjectMapper\ViaPadelClub-Kim-DCA1.Core.Tools.ObjectMapper.csproj" />
+    <ProjectReference Include="..\..\ViaPadelClub-Kim-DCA1.Core.Tools.OperationResult\ViaPadelClub-Kim-DCA1.Core.Tools.OperationResult.csproj" />
+  </ItemGroup>
+
+</Project>

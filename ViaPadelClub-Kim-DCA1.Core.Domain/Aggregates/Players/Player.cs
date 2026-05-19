@@ -10,6 +10,11 @@ public sealed class Player : AggregateRoot<PlayerId>
     public bool IsVip { get; private set; }
     public bool IsBanned { get; private set; }
 
+    private Player()
+    {
+        UniversityName = default!;
+    }
+
     private Player(PlayerId id, UniversityName universityName) : base(id)
     {
         UniversityName = universityName;

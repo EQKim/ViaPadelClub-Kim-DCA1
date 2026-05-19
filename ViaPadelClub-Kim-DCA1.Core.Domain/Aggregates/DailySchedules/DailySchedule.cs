@@ -14,6 +14,13 @@ public sealed class DailySchedule : AggregateRoot<DailyScheduleId>
     public string Status { get; private set; }
     public IReadOnlyList<DailyScheduleCourt> Courts => _courts;
 
+    private DailySchedule()
+    {
+        ManagerId = default!;
+        Window = default!;
+        Status = default!;
+    }
+
     private DailySchedule(DailyScheduleId id, ManagerId managerId, TimeRange window) : base(id)
     {
         ManagerId = managerId;

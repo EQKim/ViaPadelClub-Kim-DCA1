@@ -8,14 +8,14 @@
     </PropertyGroup>
 
     <ItemGroup>
-        <PackageReference Include="coverlet.collector" Version="6.0.2"/>
-        <PackageReference Include="Microsoft.NET.Test.Sdk" Version="17.12.0"/>
-        <PackageReference Include="xunit" Version="2.9.2"/>
-        <PackageReference Include="xunit.runner.visualstudio" Version="2.8.2"/>
+        <PackageReference Include="coverlet.collector" Version="6.0.2" />
+        <PackageReference Include="Microsoft.NET.Test.Sdk" Version="17.12.0" />
+        <PackageReference Include="xunit" Version="2.9.2" />
+        <PackageReference Include="xunit.runner.visualstudio" Version="2.8.2" />
     </ItemGroup>
 
     <ItemGroup>
-        <Using Include="Xunit"/>
+        <Using Include="Xunit" />
     </ItemGroup>
 
 
@@ -29,6 +29,7 @@
     <ItemGroup>
       <ProjectReference Include="..\ViaPadelClub-Kim-DCA1.Core.Application\ViaPadelClub-Kim-DCA1.Core.Application.csproj" />
       <ProjectReference Include="..\ViaPadelClub-Kim-DCA1.Core.Domain\ViaPadelClub-Kim-DCA1.Core.Domain.csproj" />
+      <ProjectReference Include="..\src\Core\ViaPadelClub-Kim-DCA1.Core.QueryContracts\ViaPadelClub-Kim-DCA1.Core.QueryContracts.csproj" />
     </ItemGroup>
 
 </Project>
