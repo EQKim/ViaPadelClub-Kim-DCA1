@@ -4,6 +4,7 @@ using ViaPadelClub_Kim_DCA1.Core.QueryContracts.Dispatching;
 using ViaPadelClub_Kim_DCA1.Core.Tools.ObjectMapper;
 using ViaPadelClub_Kim_DCA1.Infrastructure.PostgresDmPersistence;
 using ViaPadelClub_Kim_DCA1.Infrastructure.PostgresQueries;
+using ViaPadelClub_Kim_DCA1.Presentation.WebApi.Configuration;
 using ViaPadelClub_Kim_DCA1.Presentation.WebApi.Dispatching;
 using ViaPadelClub_Kim_DCA1.Presentation.WebApi.Mappings;
 
@@ -45,6 +46,7 @@ string? connectionString =
 
 if (!string.IsNullOrWhiteSpace(connectionString))
 {
+    connectionString = PostgresConnectionString.Normalize(connectionString);
     builder.Services.AddPostgresDmPersistence(connectionString);
     builder.Services.AddApplicationCommands();
     builder.Services.AddPostgresQueries(connectionString);
