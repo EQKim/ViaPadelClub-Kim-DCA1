@@ -18,7 +18,7 @@ builder.Services.AddOpenApi();
 
 string[] allowedOrigins = (
     Environment.GetEnvironmentVariable("VIAPADELCLUB_ALLOWED_ORIGINS")
-    ?? "http://localhost:3000;http://localhost:5173;http://localhost:61511")
+    ?? "http://localhost:3000;http://localhost:5173;http://localhost:61511;https://eqkim.github.io")
     .Split(';', StringSplitOptions.RemoveEmptyEntries | StringSplitOptions.TrimEntries);
 
 builder.Services.AddCors(options =>
