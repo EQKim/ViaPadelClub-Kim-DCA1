@@ -15,6 +15,22 @@ builder.Services.AddControllers();
 // Learn more about configuring OpenAPI at https://aka.ms/aspnet/openapi
 builder.Services.AddOpenApi();
 
+string[] allowedOrigins = (
+    Environment.GetEnvironmentVariable("VIAPADELCLUB_ALLOWED_ORIGINS")
+    ?? "http://localhost:3000;http://localhost:5173;http://localhost:61511")
+    .Split(';', StringSplitOptions.RemoveEmptyEntries | StringSplitOptions.TrimEntries);
+
+builder.Services.AddCors(options =>
+{
+    options.AddPolicy("Frontend", policy =>
+    {
+        policy
+            .WithOrigins(allowedOrigins)
+            .AllowAnyHeader()
+            .AllowAnyMethod();
+    });
+});
+
 builder.Services.AddSingleton<IObjectMapper>(_ =>
 {
     ObjectMapper mapper = new();
@@ -48,6 +64,8 @@ if (app.Environment.IsDevelopment())
 }
 
 app.UseHttpsRedirection();
+
+app.UseCors("Frontend");
 
 app.UseAuthorization();
 
