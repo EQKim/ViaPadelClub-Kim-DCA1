@@ -10,8 +10,8 @@ public sealed class TimeRange : ValueObject
 
     public TimeRange(DateTime start, DateTime end)
     {
-        Start = start;
-        End = end;
+        Start = DateTime.SpecifyKind(start, DateTimeKind.Unspecified);
+        End = DateTime.SpecifyKind(end, DateTimeKind.Unspecified);
     }
 
     protected override IEnumerable<object?> GetEqualityComponents()

@@ -125,6 +125,6 @@ public sealed class Player : AggregateRoot<PlayerId>
             actionType,
             managerId,
             reason,
-            DateTime.UtcNow));
+            DateTime.SpecifyKind(DateTime.UtcNow, DateTimeKind.Unspecified)));
     }
 }

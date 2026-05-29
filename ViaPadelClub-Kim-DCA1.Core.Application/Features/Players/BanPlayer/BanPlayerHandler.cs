@@ -44,7 +44,7 @@ public sealed class BanPlayerHandler : ICommandHandler<BanPlayerCommand>
         if (result.IsFailure)
             return result;
 
-        DateTime now = DateTime.UtcNow;
+        DateTime now = DateTime.SpecifyKind(DateTime.UtcNow, DateTimeKind.Unspecified);
         IReadOnlyList<DailySchedule> dailySchedules =
             await _dailyScheduleRepository.GetSchedulesWithBookingsForPlayerAsync(player.Id, now);
 
