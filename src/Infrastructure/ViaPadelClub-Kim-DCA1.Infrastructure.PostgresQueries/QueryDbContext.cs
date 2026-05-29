@@ -10,6 +10,7 @@ public sealed class QueryDbContext : DbContext
     }
 
     public DbSet<PlayerReadModel> Players => Set<PlayerReadModel>();
+    public DbSet<CourtReadModel> Courts => Set<CourtReadModel>();
     public DbSet<DailyScheduleReadModel> DailySchedules => Set<DailyScheduleReadModel>();
     public DbSet<DailyScheduleCourtReadModel> DailyScheduleCourts => Set<DailyScheduleCourtReadModel>();
     public DbSet<BookingReadModel> Bookings => Set<BookingReadModel>();
@@ -24,6 +25,14 @@ public sealed class QueryDbContext : DbContext
             builder.Property(player => player.UniversityName).HasColumnName("university_name");
             builder.Property(player => player.IsVip).HasColumnName("is_vip");
             builder.Property(player => player.IsBanned).HasColumnName("is_banned");
+        });
+
+        modelBuilder.Entity<CourtReadModel>(builder =>
+        {
+            builder.ToTable("courts");
+            builder.HasKey(court => court.Id);
+            builder.Property(court => court.Id).HasColumnName("id");
+            builder.Property(court => court.CourtName).HasColumnName("court_name");
         });
 
         modelBuilder.Entity<DailyScheduleReadModel>(builder =>
