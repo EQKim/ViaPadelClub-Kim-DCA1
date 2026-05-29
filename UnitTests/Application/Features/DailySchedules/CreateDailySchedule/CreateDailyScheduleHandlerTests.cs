@@ -12,18 +12,24 @@ public sealed class CreateDailyScheduleHandlerTests
     public async Task HandleAsync_WithValidCommand_ShouldCreateDailySchedule()
     {
         FakeDailyScheduleRepository dailyScheduleRepository = new();
+        FakeManagerRepository managerRepository = new();
         FakeUnitOfWork unitOfWork = new();
 
         ICommandHandler<CreateDailyScheduleCommand> handler =
-            new CreateDailyScheduleHandler(dailyScheduleRepository, unitOfWork);
+            new CreateDailyScheduleHandler(dailyScheduleRepository, managerRepository, unitOfWork);
 
         DateTime start = DateTime.Today.AddHours(8);
         DateTime end = DateTime.Today.AddHours(22);
+        Guid managerId = Guid.NewGuid();
+        await managerRepository.AddAsync(
+            ViaPadelClub_Kim_DCA1.Core.Domain.Aggregates.Managers.Manager.Create(
+                new ViaPadelClub_Kim_DCA1.Core.Domain.Aggregates.DailySchedules.Values.ManagerId(managerId),
+                "Via Padel").Value!);
 
         CreateDailyScheduleCommand command =
             CreateDailyScheduleCommand.Create(
                 Guid.NewGuid(),
-                Guid.NewGuid(),
+                managerId,
                 start,
                 end).Value!;
 

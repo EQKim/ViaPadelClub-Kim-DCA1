@@ -1,5 +1,7 @@
 ﻿using ViaPadelClub_Kim_DCA1.Core.Domain.Aggregates.Courts.Values;
 using ViaPadelClub_Kim_DCA1.Core.Domain.Aggregates.DailySchedules.Values;
+using ViaPadelClub_Kim_DCA1.Core.Domain.Aggregates.Players;
+using ViaPadelClub_Kim_DCA1.Core.Domain.Aggregates.Players.Values;
 using ViaPadelClub_Kim_DCA1.Core.Domain.Common.Bases;
 using ViaPadelClub_Kim_DCA1.Core.Tools.OperationResult;
 
@@ -59,5 +61,51 @@ public sealed class DailySchedule : AggregateRoot<DailyScheduleId>
         DailyScheduleCourt court = new DailyScheduleCourt(id, courtId, isVipOnly);
         _courts.Add(court);
         return court;
+    }
+
+    public Result<Booking> CreateBooking(
+        Player player,
+        DailyScheduleCourtId dailyScheduleCourtId,
+        BookingId bookingId,
+        TimeRange slot)
+    {
+        if (Status != "Active")
+        {
+            return Result<Booking>.Failure(
+                new Error("dailyschedule.not_active", "Daily schedule must be active to allow booking")
+            );
+        }
+
+        DailyScheduleCourt? court = _courts.FirstOrDefault(c => c.Id == dailyScheduleCourtId);
+
+        if (court is null)
+        {
+            return Result<Booking>.Failure(
+                new Error("dailyschedulecourt.not_found", "Daily schedule court was not found")
+            );
+        }
+
+        return court.CreateBooking(player, bookingId, slot, Window);
+    }
+    public int CancelActiveFutureBookingsForPlayer(PlayerId playerId, DateTime from)
+    {
+        int cancelledBookings = 0;
+
+        foreach (Booking booking in _courts.SelectMany(court => court.Bookings))
+        {
+            if (booking.PlayerId != playerId ||
+                booking.Status != "Active" ||
+                booking.Slot.Start < from)
+            {
+                continue;
+            }
+
+            Result result = booking.Cancel();
+
+            if (result.IsSuccess)
+                cancelledBookings++;
+        }
+
+        return cancelledBookings;
     }
 }

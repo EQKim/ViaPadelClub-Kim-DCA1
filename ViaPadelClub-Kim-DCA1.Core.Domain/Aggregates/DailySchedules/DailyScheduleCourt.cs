@@ -49,12 +49,7 @@ public sealed class DailyScheduleCourt : Entity<DailyScheduleCourtId>
             );
         }
 
-        bool overlaps = _bookings.Any(b =>
-            b.Status == "Active" &&
-            slot.Start < b.Slot.End &&
-            slot.End > b.Slot.Start);
-
-        if (overlaps)
+        if (HasOverlap(slot))
         {
             return Result<Booking>.Failure(
                 new Error("booking.overlap", "Booking overlaps an existing booking")
@@ -65,5 +60,13 @@ public sealed class DailyScheduleCourt : Entity<DailyScheduleCourtId>
         _bookings.Add(booking);
 
         return Result<Booking>.Success(booking);
+    }
+
+    public bool HasOverlap(TimeRange slot)
+    {
+        return _bookings.Any(b =>
+            b.Status == "Active" &&
+            slot.Start < b.Slot.End &&
+            slot.End > b.Slot.Start);
     }
 }

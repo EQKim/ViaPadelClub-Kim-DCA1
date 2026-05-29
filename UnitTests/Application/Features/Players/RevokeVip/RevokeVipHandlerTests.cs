@@ -13,6 +13,7 @@ public sealed class RevokeVipHandlerTests
     public async Task HandleAsync_WithVipPlayer_ShouldRevokeVip()
     {
         FakePlayerRepository playerRepository = new();
+        FakeManagerRepository managerRepository = new();
         FakeUnitOfWork unitOfWork = new();
 
         RegisterPlayerCommand registerCommand =
@@ -27,7 +28,7 @@ public sealed class RevokeVipHandlerTests
         await playerRepository.AddAsync(player);
 
         ICommandHandler<RevokeVipCommand> handler =
-            new RevokeVipHandler(playerRepository, unitOfWork);
+            new RevokeVipHandler(playerRepository, managerRepository, unitOfWork);
 
         RevokeVipCommand command =
             RevokeVipCommand.Create(player.Id.Value).Value!;
@@ -43,10 +44,11 @@ public sealed class RevokeVipHandlerTests
     public async Task HandleAsync_WithUnknownPlayer_ShouldFail()
     {
         FakePlayerRepository playerRepository = new();
+        FakeManagerRepository managerRepository = new();
         FakeUnitOfWork unitOfWork = new();
 
         ICommandHandler<RevokeVipCommand> handler =
-            new RevokeVipHandler(playerRepository, unitOfWork);
+            new RevokeVipHandler(playerRepository, managerRepository, unitOfWork);
 
         RevokeVipCommand command =
             RevokeVipCommand.Create(Guid.NewGuid()).Value!;

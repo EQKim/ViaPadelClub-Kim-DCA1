@@ -36,14 +36,12 @@ public sealed class CreateBookingHandler : ICommandHandler<CreateBookingCommand>
         if (player is null)
             return Result.Failure(new Error("player.not_found", "Player was not found"));
 
-        DailyScheduleCourt? court =
-            dailySchedule.Courts.FirstOrDefault(c => c.Id == command.DailyScheduleCourtId);
-
-        if (court is null)
-            return Result.Failure(new Error("dailyschedulecourt.not_found", "Daily schedule court was not found"));
-
         Result<Booking> result =
-            court.CreateBooking(player, command.BookingId, command.Slot, dailySchedule.Window);
+            dailySchedule.CreateBooking(
+                player,
+                command.DailyScheduleCourtId,
+                command.BookingId,
+                command.Slot);
 
         if (result.IsFailure)
             return Result.Failure(result.Errors);

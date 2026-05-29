@@ -27,5 +27,13 @@ public sealed class PlayerConfiguration : IEntityTypeConfiguration<Player>
 
         builder.Property(player => player.IsBanned)
             .HasColumnName("is_banned");
+
+        builder.HasMany(player => player.AdminActions)
+            .WithOne()
+            .HasForeignKey("player_id")
+            .OnDelete(DeleteBehavior.Cascade);
+
+        builder.Navigation(player => player.AdminActions)
+            .UsePropertyAccessMode(PropertyAccessMode.Field);
     }
 }

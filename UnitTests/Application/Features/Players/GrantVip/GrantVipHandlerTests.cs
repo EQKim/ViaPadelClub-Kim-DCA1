@@ -13,6 +13,7 @@ public sealed class GrantVipHandlerTests
     public async Task HandleAsync_WithExistingPlayer_ShouldGrantVip()
     {
         FakePlayerRepository playerRepository = new();
+        FakeManagerRepository managerRepository = new();
         FakeUnitOfWork unitOfWork = new();
 
         RegisterPlayerCommand registerCommand =
@@ -25,7 +26,7 @@ public sealed class GrantVipHandlerTests
         await playerRepository.AddAsync(player);
 
         ICommandHandler<GrantVipCommand> handler =
-            new GrantVipHandler(playerRepository, unitOfWork);
+            new GrantVipHandler(playerRepository, managerRepository, unitOfWork);
 
         GrantVipCommand command =
             GrantVipCommand.Create(player.Id.Value).Value!;
@@ -41,10 +42,11 @@ public sealed class GrantVipHandlerTests
     public async Task HandleAsync_WithUnknownPlayer_ShouldFail()
     {
         FakePlayerRepository playerRepository = new();
+        FakeManagerRepository managerRepository = new();
         FakeUnitOfWork unitOfWork = new();
 
         ICommandHandler<GrantVipCommand> handler =
-            new GrantVipHandler(playerRepository, unitOfWork);
+            new GrantVipHandler(playerRepository, managerRepository, unitOfWork);
 
         GrantVipCommand command =
             GrantVipCommand.Create(Guid.NewGuid()).Value!;

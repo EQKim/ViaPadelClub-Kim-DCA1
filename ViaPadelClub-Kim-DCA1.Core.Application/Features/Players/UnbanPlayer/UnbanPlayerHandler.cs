@@ -1,32 +1,28 @@
 using ViaPadelClub_Kim_DCA1.Core.Application.Abstractions;
-using ViaPadelClub_Kim_DCA1.Core.Domain.Aggregates.DailySchedules;
 using ViaPadelClub_Kim_DCA1.Core.Domain.Aggregates.Managers;
 using ViaPadelClub_Kim_DCA1.Core.Domain.Aggregates.Players;
 using ViaPadelClub_Kim_DCA1.Core.Domain.Common.Contracts;
 using ViaPadelClub_Kim_DCA1.Core.Tools.OperationResult;
 
-namespace ViaPadelClub_Kim_DCA1.Core.Application.Features.Players.BanPlayer;
+namespace ViaPadelClub_Kim_DCA1.Core.Application.Features.Players.UnbanPlayer;
 
-public sealed class BanPlayerHandler : ICommandHandler<BanPlayerCommand>
+public sealed class UnbanPlayerHandler : ICommandHandler<UnbanPlayerCommand>
 {
     private readonly IPlayerRepository _playerRepository;
-    private readonly IDailyScheduleRepository _dailyScheduleRepository;
     private readonly IManagerRepository _managerRepository;
     private readonly IUnitOfWork _unitOfWork;
 
-    public BanPlayerHandler(
+    public UnbanPlayerHandler(
         IPlayerRepository playerRepository,
-        IDailyScheduleRepository dailyScheduleRepository,
         IManagerRepository managerRepository,
         IUnitOfWork unitOfWork)
     {
         _playerRepository = playerRepository;
-        _dailyScheduleRepository = dailyScheduleRepository;
         _managerRepository = managerRepository;
         _unitOfWork = unitOfWork;
     }
 
-    public async Task<Result> HandleAsync(BanPlayerCommand command)
+    public async Task<Result> HandleAsync(UnbanPlayerCommand command)
     {
         Player? player = await _playerRepository.GetByIdAsync(command.PlayerId);
 
@@ -39,19 +35,10 @@ public sealed class BanPlayerHandler : ICommandHandler<BanPlayerCommand>
             return Result.Failure(new Error("manager.not_found", "Manager was not found"));
         }
 
-        Result result = player.Ban(command.ManagerId, command.Reason);
+        Result result = player.Unban(command.ManagerId, command.Reason);
 
         if (result.IsFailure)
             return result;
-
-        DateTime now = DateTime.UtcNow;
-        IReadOnlyList<DailySchedule> dailySchedules =
-            await _dailyScheduleRepository.GetSchedulesWithBookingsForPlayerAsync(player.Id, now);
-
-        foreach (DailySchedule dailySchedule in dailySchedules)
-        {
-            dailySchedule.CancelActiveFutureBookingsForPlayer(player.Id, now);
-        }
 
         await _unitOfWork.SaveChangesAsync();
 

@@ -5,6 +5,7 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Documentation", "Documentat
 		Documentation\GroupMembers.md = Documentation\GroupMembers.md
 		Documentation\Abstract-Domain.png = Documentation\Abstract-Domain.png
 		Documentation\Concrete-Domain.png = Documentation\Concrete-Domain.png
+		Documentation\Concrete-DomainModelV2.drawio.png = Documentation\Concrete-DomainModelV2.drawio.png
 	EndProjectSection
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "src", "src", "{2CE1A58F-8DC0-4357-B125-532C5B4FC74E}"

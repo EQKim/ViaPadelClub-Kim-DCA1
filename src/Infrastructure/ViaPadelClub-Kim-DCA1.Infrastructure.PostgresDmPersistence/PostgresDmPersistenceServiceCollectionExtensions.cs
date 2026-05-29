@@ -1,6 +1,8 @@
 using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.DependencyInjection;
+using ViaPadelClub_Kim_DCA1.Core.Domain.Aggregates.Courts;
 using ViaPadelClub_Kim_DCA1.Core.Domain.Aggregates.DailySchedules;
+using ViaPadelClub_Kim_DCA1.Core.Domain.Aggregates.Managers;
 using ViaPadelClub_Kim_DCA1.Core.Domain.Aggregates.Players;
 using ViaPadelClub_Kim_DCA1.Core.Domain.Common.Contracts;
 using ViaPadelClub_Kim_DCA1.Infrastructure.PostgresDmPersistence.Repositories;
@@ -14,6 +16,8 @@ public static class PostgresDmPersistenceServiceCollectionExtensions
         string connectionString)
     {
         services.AddDbContext<DmContext>(options => options.UseNpgsql(connectionString));
+        services.AddScoped<IManagerRepository, ManagerRepository>();
+        services.AddScoped<ICourtRepository, CourtRepository>();
         services.AddScoped<IPlayerRepository, PlayerRepository>();
         services.AddScoped<IDailyScheduleRepository, DailyScheduleRepository>();
         services.AddScoped<IUnitOfWork, UnitOfWork>();

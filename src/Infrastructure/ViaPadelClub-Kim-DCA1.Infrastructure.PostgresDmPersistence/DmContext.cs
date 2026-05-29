@@ -1,5 +1,7 @@
 using Microsoft.EntityFrameworkCore;
+using ViaPadelClub_Kim_DCA1.Core.Domain.Aggregates.Courts;
 using ViaPadelClub_Kim_DCA1.Core.Domain.Aggregates.DailySchedules;
+using ViaPadelClub_Kim_DCA1.Core.Domain.Aggregates.Managers;
 using ViaPadelClub_Kim_DCA1.Core.Domain.Aggregates.Players;
 
 namespace ViaPadelClub_Kim_DCA1.Infrastructure.PostgresDmPersistence;
@@ -11,6 +13,8 @@ public sealed class DmContext : DbContext
     }
 
     public DbSet<Player> Players => Set<Player>();
+    public DbSet<Manager> Managers => Set<Manager>();
+    public DbSet<Court> Courts => Set<Court>();
     public DbSet<DailySchedule> DailySchedules => Set<DailySchedule>();
 
     protected override void OnModelCreating(ModelBuilder modelBuilder)
