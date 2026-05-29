@@ -20,11 +20,13 @@ public static class PostgresQueriesServiceCollectionExtensions
         services.AddSingleton<ISystemTime, SystemTime>();
         services.AddScoped<IQueryHandler<GetUpcomingDailySchedulesQuery, UpcomingDailySchedulesAnswer>, GetUpcomingDailySchedulesQueryHandler>();
         services.AddScoped<IQueryHandler<GetPlayerDirectoryQuery, PlayerDirectoryAnswer>, GetPlayerDirectoryQueryHandler>();
+        services.AddScoped<IQueryHandler<GetPlayerBookingsQuery, PlayerBookingsAnswer>, GetPlayerBookingsQueryHandler>();
         services.AddScoped<IQueryHandler<GetCourtsQuery, CourtsAnswer>, GetCourtsQueryHandler>();
 
         services.AddScoped<IQueryDispatcher>(provider => new QueryDispatcher()
             .Register(provider.GetRequiredService<IQueryHandler<GetUpcomingDailySchedulesQuery, UpcomingDailySchedulesAnswer>>())
             .Register(provider.GetRequiredService<IQueryHandler<GetPlayerDirectoryQuery, PlayerDirectoryAnswer>>())
+            .Register(provider.GetRequiredService<IQueryHandler<GetPlayerBookingsQuery, PlayerBookingsAnswer>>())
             .Register(provider.GetRequiredService<IQueryHandler<GetCourtsQuery, CourtsAnswer>>()));
 
         return services;
