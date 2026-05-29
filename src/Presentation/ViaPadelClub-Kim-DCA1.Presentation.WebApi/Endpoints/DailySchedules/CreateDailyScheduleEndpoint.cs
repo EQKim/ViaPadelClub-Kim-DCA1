@@ -43,7 +43,7 @@ public sealed class CreateDailyScheduleEndpoint
         }
         catch (Exception exception)
         {
-            return Problem(exception.Message, statusCode: StatusCodes.Status500InternalServerError);
+            return Problem(ExceptionResponseFactory.GetDetail(exception), statusCode: StatusCodes.Status500InternalServerError);
         }
     }
 }
