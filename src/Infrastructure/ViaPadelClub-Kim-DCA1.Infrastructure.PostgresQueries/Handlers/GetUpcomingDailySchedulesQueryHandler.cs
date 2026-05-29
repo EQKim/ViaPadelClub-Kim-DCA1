@@ -39,6 +39,10 @@ public sealed class GetUpcomingDailySchedulesQueryHandler
                     .Select(court => new UpcomingDailyScheduleCourtDto(
                         court.Id,
                         court.CourtId,
+                        _context.Courts
+                            .Where(courtReadModel => courtReadModel.Id == court.CourtId)
+                            .Select(courtReadModel => courtReadModel.CourtName)
+                            .FirstOrDefault() ?? string.Empty,
                         court.IsVipOnly,
                         court.Bookings.Count(booking => booking.Status == "Active"),
                         court.Bookings

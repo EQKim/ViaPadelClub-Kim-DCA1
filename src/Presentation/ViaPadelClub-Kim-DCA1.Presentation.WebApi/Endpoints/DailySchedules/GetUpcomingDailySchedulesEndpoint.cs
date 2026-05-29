@@ -56,6 +56,7 @@ public sealed record UpcomingDailyScheduleResponseItem(
 public sealed record UpcomingDailyScheduleCourtResponseItem(
     Guid DailyScheduleCourtId,
     Guid CourtId,
+    string CourtName,
     bool IsVipOnly,
     int ActiveBookings,
     IReadOnlyList<UpcomingBookingResponseItem> Bookings);

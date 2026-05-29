@@ -28,6 +28,7 @@ public sealed class UpcomingDailySchedulesAnswerMapping
                     .Select(court => new UpcomingDailyScheduleCourtResponseItem(
                         court.DailyScheduleCourtId,
                         court.CourtId,
+                        court.CourtName,
                         court.IsVipOnly,
                         court.ActiveBookings,
                         court.Bookings

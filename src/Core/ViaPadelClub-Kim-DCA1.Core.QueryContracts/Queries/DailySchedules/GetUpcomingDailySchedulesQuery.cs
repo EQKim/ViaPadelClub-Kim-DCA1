@@ -15,6 +15,7 @@ public sealed record UpcomingDailyScheduleDto(
 public sealed record UpcomingDailyScheduleCourtDto(
     Guid DailyScheduleCourtId,
     Guid CourtId,
+    string CourtName,
     bool IsVipOnly,
     int ActiveBookings,
     IReadOnlyList<UpcomingBookingDto> Bookings);
