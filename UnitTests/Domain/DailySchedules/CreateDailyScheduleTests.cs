@@ -21,7 +21,7 @@ public class CreateDailyScheduleTests
 
         Assert.True(result.IsSuccess);
 
-        DailySchedule dailySchedule = result.Value;
+        DailySchedule dailySchedule = result.Value!;
 
         Assert.Equal(id, dailySchedule.Id);
         Assert.Equal(managerId, dailySchedule.ManagerId);

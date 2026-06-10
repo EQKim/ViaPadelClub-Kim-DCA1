@@ -16,14 +16,14 @@ public class CancelBookingTests
     {
         Player player = Player.Register(
             new PlayerId(Guid.NewGuid()),
-            new UniversityName("VIA")).Value;
+            new UniversityName("VIA")).Value!;
 
         DailySchedule schedule = DailySchedule.Create(
             new DailyScheduleId(Guid.NewGuid()),
             new ManagerId(Guid.NewGuid()),
             new TimeRange(
                 new DateTime(2026, 1, 1, 8, 0, 0),
-                new DateTime(2026, 1, 1, 16, 0, 0))).Value;
+                new DateTime(2026, 1, 1, 16, 0, 0))).Value!;
 
         schedule.Activate();
 
@@ -38,7 +38,7 @@ public class CancelBookingTests
             new TimeRange(
                 new DateTime(2026, 1, 1, 9, 0, 0),
                 new DateTime(2026, 1, 1, 10, 0, 0)),
-            schedule.Window).Value;
+            schedule.Window).Value!;
 
         Result result = booking.Cancel();
 
@@ -51,14 +51,14 @@ public class CancelBookingTests
     {
         Player player = Player.Register(
             new PlayerId(Guid.NewGuid()),
-            new UniversityName("VIA")).Value;
+            new UniversityName("VIA")).Value!;
 
         DailySchedule schedule = DailySchedule.Create(
             new DailyScheduleId(Guid.NewGuid()),
             new ManagerId(Guid.NewGuid()),
             new TimeRange(
                 new DateTime(2026, 1, 1, 8, 0, 0),
-                new DateTime(2026, 1, 1, 16, 0, 0))).Value;
+                new DateTime(2026, 1, 1, 16, 0, 0))).Value!;
 
         schedule.Activate();
 
@@ -73,7 +73,7 @@ public class CancelBookingTests
             new TimeRange(
                 new DateTime(2026, 1, 1, 9, 0, 0),
                 new DateTime(2026, 1, 1, 10, 0, 0)),
-            schedule.Window).Value;
+            schedule.Window).Value!;
 
         booking.Cancel();
         Result result = booking.Cancel();

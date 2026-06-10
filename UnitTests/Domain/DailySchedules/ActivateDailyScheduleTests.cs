@@ -17,7 +17,7 @@ public class ActivateDailyScheduleTests
             new DateTime(2026, 1, 1, 8, 0, 0),
             new DateTime(2026, 1, 1, 16, 0, 0));
 
-        DailySchedule dailySchedule = DailySchedule.Create(id, managerId, window).Value;
+        DailySchedule dailySchedule = DailySchedule.Create(id, managerId, window).Value!;
 
         Result result = dailySchedule.Activate();
 
@@ -34,7 +34,7 @@ public class ActivateDailyScheduleTests
             new DateTime(2026, 1, 1, 8, 0, 0),
             new DateTime(2026, 1, 1, 16, 0, 0));
 
-        DailySchedule dailySchedule = DailySchedule.Create(id, managerId, window).Value;
+        DailySchedule dailySchedule = DailySchedule.Create(id, managerId, window).Value!;
 
         dailySchedule.Activate();
         Result result = dailySchedule.Activate();

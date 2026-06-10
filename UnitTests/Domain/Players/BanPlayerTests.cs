@@ -13,7 +13,7 @@ public class BanPlayerTests
         UniversityName universityName = new UniversityName("VIA University College");
 
         Result<Player> registerResult = Player.Register(playerId, universityName);
-        Player player = registerResult.Value;
+        Player player = registerResult.Value!;
 
         Result result = player.Ban();
 
@@ -28,7 +28,7 @@ public class BanPlayerTests
         UniversityName universityName = new UniversityName("VIA University College");
 
         Result<Player> registerResult = Player.Register(playerId, universityName);
-        Player player = registerResult.Value;
+        Player player = registerResult.Value!;
 
         player.Ban();
         Result result = player.Ban();

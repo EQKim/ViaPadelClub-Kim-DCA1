@@ -14,7 +14,7 @@ public class RevokeVipTests
         PlayerId id = new PlayerId(Guid.NewGuid());
         UniversityName university = new UniversityName("VIA");
 
-        Player player = Player.Register(id, university).Value;
+        Player player = Player.Register(id, university).Value!;
         player.GrantVip();
 
         Result result = player.RevokeVip();
@@ -29,7 +29,7 @@ public class RevokeVipTests
         PlayerId id = new PlayerId(Guid.NewGuid());
         UniversityName university = new UniversityName("VIA");
 
-        Player player = Player.Register(id, university).Value;
+        Player player = Player.Register(id, university).Value!;
 
         Result result = player.RevokeVip();
 

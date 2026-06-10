@@ -18,7 +18,7 @@ public class RegisterPlayerTests
 
         Assert.True(result.IsSuccess);
 
-        Player player = result.Value;
+        Player player = result.Value!;
 
         Assert.Equal(playerId, player.Id);
         Assert.Equal(universityName, player.UniversityName);
