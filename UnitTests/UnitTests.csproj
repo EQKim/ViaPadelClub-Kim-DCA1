@@ -18,18 +18,10 @@
         <Using Include="Xunit" />
     </ItemGroup>
 
-
     <ItemGroup>
-      <Folder Include="Domain\Aggregates\Courts\" />
-      <Folder Include="Domain\Aggregates\DailySchedules\" />
-      <Folder Include="Domain\Aggregates\Players\" />
-      <Folder Include="Domain\Common\Bases\" />
-    </ItemGroup>
-
-    <ItemGroup>
-      <ProjectReference Include="..\ViaPadelClub-Kim-DCA1.Core.Application\ViaPadelClub-Kim-DCA1.Core.Application.csproj" />
-      <ProjectReference Include="..\ViaPadelClub-Kim-DCA1.Core.Domain\ViaPadelClub-Kim-DCA1.Core.Domain.csproj" />
-      <ProjectReference Include="..\src\Core\ViaPadelClub-Kim-DCA1.Core.QueryContracts\ViaPadelClub-Kim-DCA1.Core.QueryContracts.csproj" />
+        <ProjectReference Include="..\ViaPadelClub-Kim-DCA1.Core.Application\ViaPadelClub-Kim-DCA1.Core.Application.csproj" />
+        <ProjectReference Include="..\ViaPadelClub-Kim-DCA1.Core.Domain\ViaPadelClub-Kim-DCA1.Core.Domain.csproj" />
+        <ProjectReference Include="..\src\Core\ViaPadelClub-Kim-DCA1.Core.QueryContracts\ViaPadelClub-Kim-DCA1.Core.QueryContracts.csproj" />
     </ItemGroup>
 
 </Project>
