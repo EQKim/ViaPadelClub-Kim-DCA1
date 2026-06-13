@@ -20,8 +20,4 @@ public class Result<T> : Result
         return new Result<T>(false, default, errors);
     }
 
-    public static new Result<T> Failure(IEnumerable<Error> errors)
-    {
-        return new Result<T>(false, default, errors);
-    }
 }
